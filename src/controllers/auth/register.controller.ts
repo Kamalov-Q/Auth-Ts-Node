@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { comparePassword, hashPassword } from "../../../utils/hash";
-import { User } from "../../../models/users.model";
+import { User } from "../../models/users.model";
 import {
   generateAccessToken,
   generateRefreshToken,
-} from "../../../utils/generateToken";
+} from "../../utils/generateToken";
+import { comparePassword, hashPassword } from "../../utils/hash";
 export const registerUser = async (
   req: Request,
   res: Response

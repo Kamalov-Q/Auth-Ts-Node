@@ -1,7 +1,7 @@
 import express from "express";
 import { config } from "dotenv";
 import router from "./routes/auth.routes";
-import { connectDB } from "../config/database.config";
+import { connectDB } from "./config/database.config";
 
 config();
 

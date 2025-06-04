@@ -5,9 +5,9 @@ import {
   loginUser,
   registerUser,
 } from "../controllers/auth/register.controller";
-import { authentificateUser } from "../../middleware/authentificateUser";
-import { authorizeUser } from "../../middleware/authorizeUser";
-import { Role } from "../../types/types";
+import { authentificateUser } from "../middleware/authentificateUser";
+import { Role } from "../types/types";
+import { authorizeUser } from "../middleware/authorizeUser";
 const router = Router();
 
 router.post("/register", registerUser);

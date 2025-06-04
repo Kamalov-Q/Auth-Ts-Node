@@ -1,4 +1,3 @@
-import { MongoClient } from "mongodb";
 import { config } from "dotenv";
 import mongoose from "mongoose";
 import { User } from "../models/users.model";
