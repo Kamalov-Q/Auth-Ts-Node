@@ -2,16 +2,16 @@
   "name": "ts-auth-node",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.ts",
+  "main": "src/server.js",
   "scripts": {
     "start": "ts-node-dev --respawn src/server.ts",
     "dev": "nodemon src/server.ts",
     "build": "tsc --build --clean"
   },
   "keywords": [],
-  "author": "",
+  "author": "kamalov",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@types/mongoose": "^5.11.96",
     "bcrypt": "^6.0.0",
