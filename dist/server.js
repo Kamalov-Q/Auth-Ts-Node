@@ -13,6 +13,12 @@ var PORT = process.env.PORT;
 var app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use("/api/v1/auth", auth_routes_1.default);
+app.get("/", function (req, res) {
+    res.send("Server is running");
+});
+app.get("/test", function (req, res) {
+    res.send("Server is running Testing");
+});
 app.listen(PORT, function () {
     console.log("Server started on port ".concat(PORT));
 });
