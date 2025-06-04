@@ -14,6 +14,10 @@ app.use(express.json());
 
 app.use("/api/v1/auth", router);
 
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
