@@ -47,6 +47,7 @@ var authorizeUser = function (roles) {
                 console.log(user, "user from middleware");
                 if (!roles.includes(user.role)) {
                     res.status(403).json({ message: "Access Denied" });
+                    return [2 /*return*/];
                 }
                 next();
             }

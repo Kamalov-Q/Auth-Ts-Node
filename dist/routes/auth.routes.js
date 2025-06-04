@@ -9,4 +9,6 @@ router.post("/register", register_controller_1.registerUser);
 router.post("/login", register_controller_1.loginUser);
 router.get("/current-user", authentificateUser_1.authentificateUser, register_controller_1.getCurrentUser);
 router.get("/users", authentificateUser_1.authentificateUser, (0, authorizeUser_1.authorizeUser)(["admin"]), register_controller_1.getUsers);
+router.put("/user-profile/:id", authentificateUser_1.authentificateUser, (0, authorizeUser_1.authorizeUser)(["admin"]), register_controller_1.updateUserProfile);
+router.patch("/user/:userId", authentificateUser_1.authentificateUser, (0, authorizeUser_1.authorizeUser)(["admin"]), register_controller_1.updateUser);
 exports.default = router;
