@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { config } from "dotenv";
+import { JwtUserPayload } from "../types/express";
 
 config();
 
@@ -12,24 +13,23 @@ export const authentificateUser = (
   try {
     const authHeader = req.headers.authorization;
     if (!authHeader) {
-      return res.status(401).json({ message: "Unauthorized" });
+      res.status(401).json({ message: "Unauthorized" });
+      return;
     }
 
     const token = authHeader.split(" ")[1];
 
-    console.log(token, "token");
-
     if (!token) {
-      return res.status(401).json({ message: "Unauthorized" });
+      res.status(401).json({ message: "Unauthorized" });
     }
 
     const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET!);
 
     if (!decodedToken) {
-      return res.status(401).json({ message: "Unauthorized" });
+      res.status(401).json({ message: "Unauthorized" });
     }
 
-    req.user = decodedToken;
+    req.user = decodedToken as JwtUserPayload;
 
     next();
   } catch (error) {

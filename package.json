@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node-dev --respawn server.ts",
     "dev": "nodemon server.ts",
-    "build": "tsc"
+    "build": "tsc --build --clean"
   },
   "keywords": [],
   "author": "",
